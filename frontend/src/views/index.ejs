@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="<%= htmlWebpackPlugin.files.css %>">
+</head>
+<body>
+<div class="fixed">
+    <div>
+        <pre>
+The Input range element breaks WebSocket onmessage event
+Time is sent by WebSocket
+Ttime will freeze when scrolling page with mouse wheel or touchpad
+        </pre>
+    </div>
+    <input type="range"/>
+    <div id="time"></div>
+    <input type="checkbox" id="fix">
+    <label for="fix">FIX ISSUE</label>
+</div>
+<% for(var i=0; i<htmlWebpackPlugin.files.js.length; i++) {%>
+<script src="<%= htmlWebpackPlugin.options.CDN_HOST%><%= htmlWebpackPlugin.files.js[i] %>"></script>
+<% } %>
+</body>
+</html>
