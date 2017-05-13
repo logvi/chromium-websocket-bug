@@ -3,6 +3,7 @@ const path = require('path');
 const app = express();
 const server = require('http').Server(app);
 const io = require('socket.io').listen(server);
+const PORT = process.env.PORT;
 
 const staticFiles = path.resolve(__dirname, 'frontend', 'dist');
 const views = path.join(staticFiles, 'views');
@@ -17,8 +18,8 @@ app.get('/', function (req, res) {
     res.sendFile('index.html');
 });
 
-server.listen(3000, function () {
-    console.log('App listening on port 3000!')
+server.listen(PORT, function () {
+    console.log('App listening on port ' + PORT + '!');
 });
 
 setInterval(() => {

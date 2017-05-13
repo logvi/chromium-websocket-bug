@@ -2,7 +2,7 @@ import '../styles/style.scss';
 
 import io from 'socket.io-client';
 
-const socket = io.connect('http://localhost:3000');
+const socket = io.connect(location.origin);
 socket.on('time', (data) => {
     timeNode.innerText = new Date(data.time).toLocaleTimeString();
 });
