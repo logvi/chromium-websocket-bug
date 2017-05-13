@@ -74,6 +74,14 @@ let config = {
             hash: true
         }),
 
+        new HTML({
+            template: srcPath + '/views/noinput.ejs',
+            filename: 'noinput.html',
+            inject: false,
+            minJS: production ? '.min' : '',
+            hash: true
+        }),
+
         // build css into separate file
         new ExtractTextPlugin({
             filename: 'style/main.css',

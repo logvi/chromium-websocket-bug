@@ -8,7 +8,7 @@ socket.on('time', (data) => {
 });
 
 const timeNode = document.getElementById('time');
-document.getElementById('fix').addEventListener('change', ({target}) => {
+document.getElementById('fix') && document.getElementById('fix').addEventListener('change', ({target}) => {
     if (target.checked) {
         window.addEventListener('mousewheel', blankEventHandler);
     } else {
